@@ -8,30 +8,30 @@ class HamBurgerMenu extends Component {
       <React.Fragment>
         <nav role="navigation">
           <div id="menuToggle">
-            <input type="checkbox" />
+            <input type="checkbox"/>
             <span />
             <span />
             <span />
             <ul id="menu">
-              <a href="#">
+              <a href="index.html#service-main-display-div">
                 <li>Home</li>
               </a>
-              <a href="#">
+              <a href="index.html#service-main-display-div">
                 <li>Our Story</li>
               </a>
-              <a href="#">
+              <a href="index.html#doctor-main-display-div">
                 <li>Meet the doctor</li>
               </a>
-              <a href="#">
+              <a href="index.html#service-main-display-div">
                 <li>Our Services</li>
               </a>
-              <a href="#">
+              <a href="index.html#service-main-display-div">
                 <li>Updates</li>
               </a>
-              <a href="#">
+              <a href="index.html#service-main-display-div">
                 <li>More Infomation</li>
               </a>
-              <a href="" target="_blank">
+              <a href="index.html#service-main-display-div">
                 <li>Contact</li>
               </a><br/><br/>
 

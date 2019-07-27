@@ -5,7 +5,8 @@
 }
 
 .service-container{
-    background-color:#5DBCD2;
+    /* background-color:#5DBCD2; */
+    background-color: #00b3b3;
     padding:10px;
     width:100%;
     clip-path: polygon(0% 0%, 100% 0%, 100% 10%, 100% 100%, 100% 100%, 100% 100%, 0% 95%, 0% 10%)
@@ -31,10 +32,11 @@
 .book-btn{
     font-weight: bold;
     text-transform: uppercase;
+    background-color: #00b3b3
 }
 
 .package-price{
-    color:#5DBCD2;
+    color:#00b3b3;
     font-weight: bold;
 }
 
