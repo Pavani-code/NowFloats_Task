@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import CallIcon from "react-icons/lib/fa/phone";
 import axios from "axios";
 import { Button, Card, Row, Col } from "react-bootstrap";
-import api from "./api";
+import api from "./api_calls/api";
 import "./style.css";
+import LoadingSpinnder from "./LoadingSpinner";
 class MeetTheDoctor extends Component {
   constructor(props) {
     super(props);
@@ -15,30 +16,34 @@ class MeetTheDoctor extends Component {
       doctorQualification: "",
       doctorSpecialization: "",
       doctorDiscription: "",
-      doctorMobileNo: ""
+      doctorMobileNo: "",
+      loading: false
     };
   }
 
   componentDidMount() {
-    axios.get(api.DOCTOR_DETAILS_API_URL).then(response => {
-      // Destructing the response from the URL
-      const {
-        firstname,
-        lastname,
-        doctor_image,
-        qualification,
-        specialisation,
-        description,
-        mobile
-      } = response.data;
-      this.setState({
-        doctorName: firstname,
-        doctorLastName: lastname,
-        doctorImage: doctor_image,
-        doctorQualification: qualification,
-        doctorSpecialization: specialisation,
-        doctorDiscription: description,
-        doctorMobileNo: mobile
+    this.setState({ loading: true }, () => {
+      axios.get(api.DOCTOR_DETAILS_API_URL).then(response => {
+        // Destructing the response from the URL
+        this.setState({ loading: false });
+        const {
+          firstname,
+          lastname,
+          doctor_image,
+          qualification,
+          specialisation,
+          description,
+          mobile
+        } = response.data;
+        this.setState({
+          doctorName: firstname,
+          doctorLastName: lastname,
+          doctorImage: doctor_image,
+          doctorQualification: qualification,
+          doctorSpecialization: specialisation,
+          doctorDiscription: description,
+          doctorMobileNo: mobile
+        });
       });
     });
   }
@@ -59,7 +64,8 @@ class MeetTheDoctor extends Component {
       doctorQualification,
       doctorSpecialization,
       doctorDiscription,
-      doctorMobileNo
+      doctorMobileNo,
+      loading
     } = this.state;
     return (
       <React.Fragment>
@@ -67,13 +73,18 @@ class MeetTheDoctor extends Component {
           <div className="doctor-main-container">
             <h1 className="doctor-header">Meet the Doctor</h1>
             <Card style={{ width: "100%", borderRadius: "20px 20px 0 0" }}>
-              <Card.Img
-                style={{ width: "100%" }}
-                className="doctor-image"
-                variant="top"
-                src={doctorImage}
-                alt="Doctor Image"
-              />
+              {loading ? (
+                <LoadingSpinnder />
+              ) : (
+                <Card.Img
+                  style={{ width: "100%" }}
+                  className="doctor-image"
+                  variant="top"
+                  src={doctorImage}
+                  alt="Doctor Image"
+                />
+              )}
+
               <Card.Body>
                 <Row>
                   <Col>
@@ -116,7 +127,7 @@ class MeetTheDoctor extends Component {
                   <Col>
                     <Button
                       variant="outline-info"
-                      style={{ backgroundColor: "#00b3b3",color:"white" }}
+                      style={{ backgroundColor: "#00b3b3", color: "white" }}
                       block
                       onClick={this.bookAppointmentHandler}
                     >
