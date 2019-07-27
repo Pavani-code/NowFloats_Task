@@ -37,10 +37,10 @@ class HamBurgerMenu extends Component {
 
               <Row>
                   <Col>
-                  <Button variant="info" style={{width:"90%",float:"right",background:"white",borderRadius:"20px",color:"#5DBCD2",fontWeight:"bold"}}>Get Appointment</Button>
+                  <Button variant="info" style={{width:"90%",float:"right",background:"white",borderRadius:"20px",color:"#00b3b3",fontWeight:"bold"}}>Get Appointment</Button>
                   </Col>
                   <Col>
-                  <Button variant="outline-info" style={{width:"90%",borderRadius:"20px",float:"left",backgroundColor:"#5DBCD2",color:"white",border:"1px solid white"}}><Call href="tel:">Call +91 234567890</Call></Button>
+                  <Button variant="outline-info" style={{width:"90%",borderRadius:"20px",float:"left",backgroundColor:"#00b3b3",color:"white",border:"1px solid white"}}><Call href="tel:">Call +91 234567890</Call></Button>
                   </Col>
               </Row>
             
