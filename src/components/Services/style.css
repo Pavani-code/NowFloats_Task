@@ -1,0 +1,41 @@
+.service-card{
+    border-radius: 20px;
+    align-content: center;
+    
+}
+
+.service-container{
+    background-color:#5DBCD2;
+    padding:10px;
+    width:100%;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 10%, 100% 100%, 100% 100%, 100% 100%, 0% 95%, 0% 10%)
+}
+.main-container{
+    margin:auto;
+    width:60%;
+}
+.header-label{
+    color:white;
+
+}
+.card-image{
+    border-radius:20px 20px 0 0;
+}
+
+.readmore-anchor{
+    text-decoration: underline;
+    font-weight:bold;
+    
+}
+
+.book-btn{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.package-price{
+    color:#5DBCD2;
+    font-weight: bold;
+}
+
+
